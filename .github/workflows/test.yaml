@@ -9,6 +9,7 @@ on:
       checkbox2:
         type: boolean
         description: A checkbox, default on
+        default: true
       favoriteColor:
         type: choice
         description: A choice

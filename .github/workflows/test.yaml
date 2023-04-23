@@ -86,6 +86,10 @@ jobs:
           echo
           echo "So, how to accurately reflect our desired defaults in non-dispatch?"
           echo
+          echo "inputs = false (${{ inputs == false }})"
+          echo "inputs truthy (${{ !!inputs }})"
+          echo "inputs eq {} (${{ inputs == {} }})"
+          echo
           echo "CHECKBOX1 = ${{ !inputs && 'false' || inputs.checkbox1 }}"
           echo "CHECKBOX2 = ${{ !inputs && 'true' || inputs.checkbox2 }}"
           echo "FAVORITE_COLOR = ${{ !inputs && 'green' || inputs.favoriteColor }}"

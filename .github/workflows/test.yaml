@@ -25,9 +25,11 @@ on:
           - Wild Rice
           - Bean
       string1:
+        type: string
         description: Any string, with default
         default: 'Batman'
-      string1:
+      string2:
+        type: string
         description: Any string, no default
 
 jobs:

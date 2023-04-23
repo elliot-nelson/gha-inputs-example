@@ -8,7 +8,7 @@ on:
 
 jobs:
   test-in-workflow:
-    runs-on: ubuntu-latest:
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Testing input: == true ${{ inputs.checkbox1 == true }}"

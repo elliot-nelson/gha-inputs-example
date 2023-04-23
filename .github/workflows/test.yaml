@@ -50,6 +50,7 @@ jobs:
           echo "checkbox1 == true (${{ inputs.checkbox1 == true }})"
           echo "checkbox1 == false (${{ inputs.checkbox1 == false }})"
           echo "checkbox1 == '' (${{ inputs.checkbox1 == '' }})"
+          echo "checkbox1 == 0 (${{ inputs.checkbox1 == 0 }})"
           echo "checkbox1 == 'true' (${{ inputs.checkbox1 == 'true' }})"
           echo "checkbox1 == 'false' (${{ inputs.checkbox1 == 'false' }})"
           echo "checkbox1 truthy (${{ !!inputs.checkbox1 }})"
@@ -57,6 +58,7 @@ jobs:
           echo "checkbox2 == true (${{ inputs.checkbox2 == true }})"
           echo "checkbox2 == false (${{ inputs.checkbox2 == false }})"
           echo "checkbox2 == '' (${{ inputs.checkbox2 == '' }})"
+          echo "checkbox2 == 0 (${{ inputs.checkbox2 == 0 }})"
           echo "checkbox2 == 'true' (${{ inputs.checkbox2 == 'true' }})"
           echo "checkbox2 == 'false' (${{ inputs.checkbox2 == 'false' }})"
           echo "checkbox2 truthy (${{ !!inputs.checkbox2 }})"
@@ -69,13 +71,23 @@ jobs:
           echo "favoriteSoup value: ${{ inputs.favoriteSoup }}"
           echo "favoriteSoup == '' (${{ inputs.favoriteSoup == '' }})"
           echo "favoriteSoup truthy (${{ !!inputs.favoriteSoup }})"
-
+          echo
           echo "string1 value: ${{ inputs.string1 }}"
           echo "string1 == '' (${{ inputs.string1 == '' }})"
           echo "string1 == 'Batman' (${{ inputs.string1 == 'Batman' }})"
           echo "string1 truthy (${{ !!inputs.string1 }})"
-
+          echo
           echo "string2 value: ${{ inputs.string2 }}"
           echo "string2 == '' (${{ inputs.string2 == '' }})"
           echo "string2 == 'Batman' (${{ inputs.string2 == 'Batman' }})"
           echo "string2 truthy (${{ !!inputs.string2 }})"
+          echo
+          echo "So, how to accurately reflect our desired defaults in non-dispatch?"
+          echo
+          echo "CHECKBOX1 = ${{ inputs && (inputs.checkbox1 && 'true' || 'false') || 'false' }}"
+          echo "CHECKBOX2 = ${{ inputs && (inputs.checkbox2 && 'true' || 'false') || 'true' }}"
+          echo "FAVORITE_COLOR = ${{ inputs && inputs.favoriteColor || 'green' }}"
+          echo "FAVORITE_SOUP = ${{ inputs && inputs.favoriteSoup || '' }}"
+          echo "STRING1 = ${{ inputs && inputs.string1 || 'Batman' }}"
+          echo "STRING2 = ${{ inputs && inputs.string2 || '' }}"
+          echo

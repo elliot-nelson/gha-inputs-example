@@ -24,13 +24,11 @@ on:
           - Minestrone
           - Wild Rice
           - Bean
-      #string1:
-      #  type: string
-      #  description: Any string, with default
-      #  default: 'Batman'
-      #string1:
-      #  type: string
-      #  description: Any string, no default
+      string1:
+        description: Any string, with default
+        default: 'Batman'
+      string1:
+        description: Any string, no default
 
 jobs:
   testing:

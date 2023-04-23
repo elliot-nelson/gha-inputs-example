@@ -36,6 +36,11 @@ on:
     branches: [main]
 
 jobs:
+  another-test:
+    uses: ./.github/workflows/_test.yaml
+    with:
+      checkbox1: ${{ inputs.checkbox1 }}
+
   testing:
     name: Testing
     runs-on: ubuntu-latest

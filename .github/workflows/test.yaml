@@ -9,28 +9,28 @@ on:
       checkbox2:
         type: boolean
         description: A checkbox, default on
-      favoriteColor:
-        type: choice
-        description: A choice
-        options:
-          - red
-          - green
-          - blue
-        default: 'green'
-      favoriteSoup:
-        type: choice
-        description: A choice, no default
-        options:
-          - Minestrone
-          - Wild Rice
-          - Bean
-      string1:
-        type: string
-        description: Any string, with default
-        default: 'Batman'
-      string1:
-        type: string
-        description: Any string, no default
+      #favoriteColor:
+      #  type: choice
+      #  description: A choice
+      #  options:
+      #    - red
+      #    - green
+      #    - blue
+      #  default: 'green'
+      #favoriteSoup:
+      #  type: choice
+      #  description: A choice, no default
+      #  options:
+      #    - Minestrone
+      #    - Wild Rice
+      #    - Bean
+      #string1:
+      #  type: string
+      #  description: Any string, with default
+      #  default: 'Batman'
+      #string1:
+      #  type: string
+      #  description: Any string, no default
 
 jobs:
   testing:

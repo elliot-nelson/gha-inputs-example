@@ -100,4 +100,5 @@ jobs:
           echo "STRING1 = ${{ inputs && inputs.string1 || 'Batman' }}"
           echo "STRING2 = ${{ inputs && inputs.string2 || '' }}"
           echo
-          echo "Operand flip: ${{ !inputs.checkbox1 && 'check1 checked' || 'check1 not check' }}
+          echo "Operand flip: ${{ !inputs.checkbox1 && 'check1 checked' || 'check1 not check' }}"
+          echo

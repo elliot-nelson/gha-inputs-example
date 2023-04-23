@@ -32,6 +32,8 @@ on:
       string2:
         type: string
         description: Any string, no default
+  push:
+    branches: [main]
 
 jobs:
   testing:

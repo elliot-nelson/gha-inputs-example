@@ -1,0 +1,76 @@
+name: Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      checkbox1:
+        type: boolean
+        description: A checkbox, default off
+      checkbox2:
+        type: boolean
+        description: A checkbox, default on
+      favoriteColor:
+        type: choice
+        description: A choice
+        options:
+          - red
+          - green
+          - blue
+        default: 'green'
+      favoriteSoup:
+        type: choice
+        description: A choice, no default
+        options:
+          - Minestrone
+          - Wild Rice
+          - Bean
+      string1:
+        type: string
+        description: Any string, with default
+        default: 'Batman'
+      string1:
+        type: string
+        description: Any string, no default
+
+jobs:
+  testing:
+    name: Testing
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        echo "Input testing..."
+        echo
+        echo "First, raw input values..."
+        echo
+        echo "checkbox1 == true (${{ inputs.checkbox1 == true }})"
+        echo "checkbox1 == false (${{ inputs.checkbox1 == false }})"
+        echo "checkbox1 == '' (${{ inputs.checkbox1 == '' }})"
+        echo "checkbox1 == 'true' (${{ inputs.checkbox1 == 'true' }})"
+        echo "checkbox1 == 'false' (${{ inputs.checkbox1 == 'false' }})"
+        echo "checkbox1 truthy (${{ !!inputs.checkbox1 }})"
+        echo
+        echo "checkbox2 == true (${{ inputs.checkbox2 == true }})"
+        echo "checkbox2 == false (${{ inputs.checkbox2 == false }})"
+        echo "checkbox2 == '' (${{ inputs.checkbox2 == '' }})"
+        echo "checkbox2 == 'true' (${{ inputs.checkbox2 == 'true' }})"
+        echo "checkbox2 == 'false' (${{ inputs.checkbox2 == 'false' }})"
+        echo "checkbox2 truthy (${{ !!inputs.checkbox2 }})"
+        echo
+        echo "favoriteColor value: ${{ inputs.favoriteColor }}"
+        echo "favoriteColor == '' (${{ inputs.favoriteColor == '' }})"
+        echo "favoriteColor == 'green' (${{ inputs.favoriteColor == 'green' }})"
+        echo "favoriteColor truthy (${{ !!inputs.favoriteColor }})"
+        echo
+        echo "favoriteSoup value: ${{ inputs.favoriteSoup }}"
+        echo "favoriteSoup == '' (${{ inputs.favoriteSoup == '' }})"
+        echo "favoriteSoup truthy (${{ !!inputs.favoriteSoup }})"
+
+        echo "string1 value: ${{ inputs.string1 }}"
+        echo "string1 == '' (${{ inputs.string1 == '' }})"
+        echo "string1 == 'Batman' (${{ inputs.string1 == 'Batman' }})"
+        echo "string1 truthy (${{ !!inputs.string1 }})"
+
+        echo "string2 value: ${{ inputs.string2 }}"
+        echo "string2 == '' (${{ inputs.string2 == '' }})"
+        echo "string2 == 'Batman' (${{ inputs.string2 == 'Batman' }})"
+        echo "string2 truthy (${{ !!inputs.string2 }})"
